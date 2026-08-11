@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-glow2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#022c22"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="screen-grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg-glow2)" rx="20"/>
+  <g transform="translate(100, 40)">
+    <rect x="0" y="0" width="200" height="320" rx="28" fill="#1e293b" stroke="#334155" stroke-width="4"/>
+    <rect x="8" y="8" width="184" height="304" rx="22" fill="#020617"/>
+    <rect x="12" y="12" width="176" height="296" rx="18" fill="url(#screen-grad2)"/>
+    <circle cx="100" cy="22" r="5" fill="#000"/>
+    <!-- Camera lens graphics -->
+    <path d="M 30 70 L 170 160 L 30 250 Z" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
+    <circle cx="100" cy="160" r="45" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.6"/>
+  </g>
+</svg>

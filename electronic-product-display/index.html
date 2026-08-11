@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Electronic Product Display System - A modern college Web Technology project featuring product filtering, live search, technical specs modal, and shopping cart built with HTML5, CSS3, and Vanilla JS.">
+  <title>Electronic Product Display System | TechPulse Catalog</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+</head>
+<body>
+
+  <!-- Header & Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <img src="images/logo.svg" alt="TechPulse Logo" class="logo-img">
+        <span class="logo-text">TechPulse</span>
+      </a>
+
+      <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="products.html" class="nav-link">Products</a></li>
+        <li><a href="products.html#categories" class="nav-link">Categories</a></li>
+        <li><a href="#about" class="nav-link">About Project</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="cart-btn" id="cartBtn" title="Shopping Cart" aria-label="View Cart">
+          <svg viewBox="0 0 24 24">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-badge" id="cartBadge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-tag">
+          <span>⚡ College Web Technology Mini Project</span>
+        </div>
+        <h1 class="hero-title">
+          Next-Gen <span class="gradient-text">Electronic Product</span><br>Display System
+        </h1>
+        <p class="hero-subtitle">
+          Explore cutting-edge smartphones, high-performance laptops, studio audio gear, smart watches, and gaming accessories with real-time filtering, detailed technical specifications, and interactive shopping cart management.
+        </p>
+
+        <!-- Live Quick Search Bar -->
+        <div class="search-box-container">
+          <form action="products.html" method="GET" class="search-input-wrapper">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" name="search" class="search-input" placeholder="Search devices by name, category, or spec..." required>
+            <button type="submit" class="search-btn">Search Catalog</button>
+          </form>
+        </div>
+
+        <!-- Hero Stats -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-value" id="statTotalProducts">16+</span>
+            <span class="stat-label">Electronic Devices</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">8</span>
+            <span class="stat-label">Tech Categories</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">100%</span>
+            <span class="stat-label">Vanilla HTML/CSS/JS</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">Instant</span>
+            <span class="stat-label">Specs & Cart Sync</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Highlights Section -->
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Explore Categories</h2>
+            <p class="section-subtitle">Discover premium consumer electronics designed for high performance</p>
+          </div>
+          <a href="products.html" class="btn btn-outline">View Full Catalog →</a>
+        </div>
+
+        <div class="category-filter-bar">
+          <button class="category-pill active" onclick="window.location.href='products.html?category=All'">All Products</button>
+          <button class="category-pill" onclick="window.location.href='products.html?category=Smartphones'">Smartphones</button>
+          <button class="category-pill" onclick="window.location.href='products.html?category=Laptops'">Laptops</button>
+          <button class="category-pill" onclick="window.location.href='products.html?category=Headphones'">Headphones</button>
+          <button class="category-pill" onclick="window.location.href='products.html?category=Smart Watches'">Smart Watches</button>
+          <button class="category-pill" onclick="window.location.href='products.html?category=Tablets'">Tablets</button>
+          <button class="category-pill" onclick="window.location.href='products.html?category=Cameras'">Cameras</button>
+          <button class="category-pill" onclick="window.location.href='products.html?category=Speakers'">Speakers</button>
+          <button class="category-pill" onclick="window.location.href='products.html?category=Gaming Accessories'">Gaming Accessories</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products Showcase -->
+    <section class="section" style="background: rgba(15, 23, 42, 0.4); border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass);">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Featured Electronic Devices</h2>
+            <p class="section-subtitle">Top rated devices with complete technical hardware specifications</p>
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+          <!-- Dynamically populated via script.js -->
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="products.html" class="btn btn-primary" style="padding: 0.85rem 2.5rem; font-size: 1rem;">
+            Browse All Electronics Catalog →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <div style="text-align: center; max-width: 750px; margin: 0 auto 3rem;">
+          <h2 class="section-title">About Electronic Product Display System</h2>
+          <p class="section-subtitle" style="margin-top: 0.75rem;">
+            This Web Technology Mini Project demonstrates modern client-side frontend engineering principles without relying on heavy third-party JavaScript frameworks. Built purely using standard semantic HTML5, CSS3 Glassmorphic Design, and modular Vanilla JavaScript.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="about-icon">🔍</div>
+            <h3>Dynamic Multi-Filtering</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
+              Filter products seamlessly across 8 electronic categories, execute instant sub-string searches, and sort catalog items by price or rating in real-time.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <div class="about-icon">📋</div>
+            <h3>Detailed Specifications Modal</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
+              Each product card features an interactive modal pop-up detailing comprehensive hardware specifications, stock status, and buyer review ratings.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <div class="about-icon">🛒</div>
+            <h3>Persistent Shopping Cart</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
+              Integrated side-drawer cart system using browser LocalStorage API. Add items, adjust quantities, calculate total bill, and trigger simulated checkouts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Component (Product Details) -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">✕</button>
+      <div id="modalBody">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Side Drawer Component -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="cart-title">🛒 Shopping Cart</h3>
+        <button class="modal-close-btn" id="cartCloseBtn" aria-label="Close cart">✕</button>
+      </div>
+
+      <div class="cart-body" id="cartItemsList">
+        <!-- Cart items rendered dynamically -->
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Total Price:</span>
+          <span id="cartTotalPrice" class="gradient-text">$0.00</span>
+        </div>
+        <div style="display: flex; gap: 0.75rem;">
+          <button class="btn btn-outline" id="clearCartBtn" style="flex: 1;">Clear Cart</button>
+          <button class="btn btn-primary" id="checkoutBtn" style="flex: 2;">Checkout Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="images/logo.svg" alt="TechPulse Logo" class="logo-img">
+            <span class="logo-text">TechPulse</span>
+          </a>
+          <p>Electronic Product Display System - A Web Technology Mini Project submission.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Product Catalog</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#about">About Project</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Categories</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?category=Smartphones">Smartphones</a></li>
+            <li><a href="products.html?category=Laptops">Laptops</a></li>
+            <li><a href="products.html?category=Headphones">Headphones</a></li>
+            <li><a href="products.html?category=Smart Watches">Smart Watches</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Technologies</h4>
+          <ul class="footer-links">
+            <li><span style="color: var(--primary-cyan);">HTML5</span> Semantic Markup</li>
+            <li><span style="color: var(--primary-blue);">CSS3</span> Glassmorphism UI</li>
+            <li><span style="color: var(--primary-violet);">Vanilla JS</span> ES6 Logic</li>
+            <li><span style="color: var(--accent-emerald);">LocalStorage</span> Cart API</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Electronic Product Display System. Designed for College Web Technology Mini Project.</div>
+        <div>Built with pure HTML5, CSS3, &amp; Vanilla JavaScript</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

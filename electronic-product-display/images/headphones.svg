@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-hp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="hp-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg-hp)" rx="20"/>
+  <g transform="translate(100, 60)">
+    <!-- Headband Arc -->
+    <path d="M 20 140 C 20 30, 180 30, 180 140" fill="none" stroke="url(#hp-glow)" stroke-width="16" stroke-linecap="round"/>
+    <path d="M 30 135 C 30 50, 170 50, 170 135" fill="none" stroke="#1e1b4b" stroke-width="8"/>
+    <!-- Left Ear Cup -->
+    <rect x="0" y="130" width="45" height="90" rx="22" fill="#1e293b" stroke="url(#hp-glow)" stroke-width="4"/>
+    <rect x="10" y="140" width="25" height="70" rx="12" fill="#0f172a"/>
+    <!-- Right Ear Cup -->
+    <rect x="155" y="130" width="45" height="90" rx="22" fill="#1e293b" stroke="url(#hp-glow)" stroke-width="4"/>
+    <rect x="165" y="140" width="25" height="70" rx="12" fill="#0f172a"/>
+    <!-- Audio Wave Graphic -->
+    <path d="M 70 230 Q 80 200 90 230 T 110 230 T 130 230" stroke="#06b6d4" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

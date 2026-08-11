@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-cam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <radialGradient id="lens-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg-cam)" rx="20"/>
+  <g transform="translate(60, 70)">
+    <!-- Camera Body -->
+    <rect x="0" y="50" width="280" height="170" rx="20" fill="#1e293b" stroke="#475569" stroke-width="4"/>
+    <!-- Top Dial & Flash mount -->
+    <rect x="40" y="30" width="60" height="20" rx="6" fill="#334155"/>
+    <rect x="180" y="25" width="50" height="25" rx="4" fill="#475569"/>
+    <!-- Camera Lens outer ring -->
+    <circle cx="140" cy="135" r="65" fill="#0f172a" stroke="#64748b" stroke-width="6"/>
+    <!-- Inner Lens -->
+    <circle cx="140" cy="135" r="48" fill="url(#lens-grad)"/>
+    <circle cx="140" cy="135" r="30" fill="#030712"/>
+    <!-- Lens reflection -->
+    <circle cx="128" cy="123" r="10" fill="#ffffff" opacity="0.4"/>
+    <!-- Red Accent Dot / Ring -->
+    <circle cx="240" cy="80" r="6" fill="#ef4444"/>
+  </g>
+</svg>
